@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import Inject
 
 @main
 struct stripe_iap_demoApp: App {
@@ -26,6 +27,7 @@ struct stripe_iap_demoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .enableInjection()
         }
         .modelContainer(sharedModelContainer)
     }

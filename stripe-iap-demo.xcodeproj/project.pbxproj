@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BEA1D3D52DD5016000150398 /* InjectionNext in Frameworks */ = {isa = PBXBuildFile; productRef = BEA1D3D42DD5016000150398 /* InjectionNext */; };
+		BEA1D3DC2DD665D000150398 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BEA1D3DB2DD665D000150398 /* FirebaseAnalytics */; };
+		BEA1DB772DD4F6E3004A34FC /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = BEA1DB762DD4F6E3004A34FC /* Inject */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		BEA1DB592DD4F487004A34FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +58,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEA1DB772DD4F6E3004A34FC /* Inject in Frameworks */,
+				BEA1D3D52DD5016000150398 /* InjectionNext in Frameworks */,
+				BEA1D3DC2DD665D000150398 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +121,9 @@
 			);
 			name = "stripe-iap-demo";
 			packageProductDependencies = (
+				BEA1DB762DD4F6E3004A34FC /* Inject */,
+				BEA1D3D42DD5016000150398 /* InjectionNext */,
+				BEA1D3DB2DD665D000150398 /* FirebaseAnalytics */,
 			);
 			productName = "stripe-iap-demo";
 			productReference = BEA1DB492DD4F484004A34FC /* stripe-iap-demo.app */;
@@ -195,6 +207,11 @@
 			);
 			mainGroup = BEA1DB402DD4F484004A34FC;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				BEA1DB752DD4F6CF004A34FC /* XCRemoteSwiftPackageReference "Inject" */,
+				BEA1D3D32DD5016000150398 /* XCRemoteSwiftPackageReference "InjectionNext" */,
+				BEA1D3DA2DD665D000150398 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BEA1DB4A2DD4F484004A34FC /* Products */;
 			projectDirPath = "";
@@ -407,6 +424,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.twjamos.stripe-iap-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -434,6 +455,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.twjamos.stripe-iap-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -550,6 +575,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BEA1D3D32DD5016000150398 /* XCRemoteSwiftPackageReference "InjectionNext" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnno1962/InjectionNext";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.1;
+			};
+		};
+		BEA1D3DA2DD665D000150398 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.12.0;
+			};
+		};
+		BEA1DB752DD4F6CF004A34FC /* XCRemoteSwiftPackageReference "Inject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BEA1D3D42DD5016000150398 /* InjectionNext */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BEA1D3D32DD5016000150398 /* XCRemoteSwiftPackageReference "InjectionNext" */;
+			productName = InjectionNext;
+		};
+		BEA1D3DB2DD665D000150398 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BEA1D3DA2DD665D000150398 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		BEA1DB762DD4F6E3004A34FC /* Inject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BEA1DB752DD4F6CF004A34FC /* XCRemoteSwiftPackageReference "Inject" */;
+			productName = Inject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BEA1DB412DD4F484004A34FC /* Project object */;
 }
